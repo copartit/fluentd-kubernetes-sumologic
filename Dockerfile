@@ -2,6 +2,9 @@ FROM fluent/fluentd:v1.1.3-debian AS builder
 
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+
 RUN cat /etc/resolv.conf
 
 # New fluent image dynamically creates user in entrypoint
