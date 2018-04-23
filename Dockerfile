@@ -2,7 +2,7 @@ FROM fluent/fluentd:v1.1.3-debian AS builder
 
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
-RUN ping -c 2 google.com
+RUN curl -v http://google.com
 
 RUN cat /etc/resolv.conf
 
