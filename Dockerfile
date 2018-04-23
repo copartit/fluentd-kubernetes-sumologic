@@ -2,10 +2,6 @@ FROM fluent/fluentd:v1.1.3-debian AS builder
 
 ENV PATH /home/fluent/.gem/ruby/2.3.0/bin:$PATH
 
-RUN cat /proc/net/fib_trie
-
-RUN cat /etc/resolv.conf
-
 # New fluent image dynamically creates user in entrypoint
 RUN [ -f /bin/entrypoint.sh ] && /bin/entrypoint.sh echo || : && \
     apt-get update && \
